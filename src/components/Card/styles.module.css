@@ -1,0 +1,32 @@
+.cardImage {
+  width: 100%;
+  max-width: 190px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid gray;
+  padding: 0.5rem 1rem !important;
+}
+.link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-grow: 1;
+}
+.link > * {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-grow: 1;
+}
+.link > * > * {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

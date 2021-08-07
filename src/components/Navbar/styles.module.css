@@ -1,0 +1,39 @@
+.nav{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid whitesmoke;
+    line-height: 125%;
+    align-items: center;
+}
+
+.nav .left {
+    display: flex;
+}
+
+.nav .left .menu {
+    display: flex;
+    margin-left: 40px;
+}
+
+
+.nav .left .menu li a{
+    color: rgb(92, 92, 92);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 3px 16px;
+    display: block;
+
+}
+
+.nav .left .menu li a:hover{
+    color: black;
+}
+
+.nav .right a:first-child{
+    margin-right: 5px;
+}
+
+.logo{
+    font-weight: bolder;
+}
