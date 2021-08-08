@@ -1,5 +1,7 @@
 .productDetailContainerDiv{
     padding: 3rem 0rem;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .description{

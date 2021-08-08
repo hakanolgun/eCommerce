@@ -1,0 +1,29 @@
+.contactdiv{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    gap: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.logo{
+    display: inline;
+    font-weight: bolder;
+    font-family: 'MonteCarlo', cursive;
+    color: blueviolet;
+    font-size: 3rem;
+    text-align: center;
+}
+.contactinfodiv{
+    padding: 3rem 1rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+.contactinfodiv h2{
+    text-align: center;
+    font-size: 2rem;
+}

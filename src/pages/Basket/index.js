@@ -1,6 +1,14 @@
 import React, { useState, useRef } from "react";
 import { useBasket } from "../../contexts/BasketContext";
-import { Alert, Image, Button, Box, Text, Textarea } from "@chakra-ui/react";
+import {
+  Alert,
+  Image,
+  Button,
+  Box,
+  Text,
+  Textarea,
+  Heading,
+} from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 
@@ -19,34 +27,36 @@ import {
 import { postOrder } from "../../api";
 
 function Basket() {
-    const [address, setAddress] = useState("");
-	const { isOpen, onOpen, onClose } = useDisclosure();
-	const initialRef = useRef();
+  const [address, setAddress] = useState("");
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const initialRef = useRef();
 
-	const { items, removeFromBasket, emptyBasket } = useBasket();
-	const total = items.reduce((acc, obj) => acc + obj.price, 0).toFixed(2);
+  const { items, removeFromBasket, emptyBasket } = useBasket();
+  const total = items.reduce((acc, obj) => acc + obj.price, 0).toFixed(2);
 
-	const handleSubmitForm = async () => {
-		const itemIds = items.map((item) => item._id);
+  const handleSubmitForm = async () => {
+    const itemIds = items.map((item) => item._id);
 
-		const input = {
-			address,
-			items: JSON.stringify(itemIds),
-		};
+    const input = {
+      address,
+      items: JSON.stringify(itemIds),
+    };
 
-		const response = await postOrder(input);
-        console.log(response);
+    const response = await postOrder(input);
+    console.log(response);
 
-		emptyBasket();
-		onClose();
-	};
+    emptyBasket();
+    onClose();
+  };
 
   return (
-    <Box p="10">
+    <Box className="basketpagecontainer" p="10">
+      <Box mb="1rem" textAlign="center">
+        <Heading>Basket</Heading>
+      </Box>
       {items.length < 1 && (
         <Alert status="warning">You have not any items in your basket</Alert>
       )}
-
       {items.length > 0 && (
         <>
           <ul className={styles.basketul}>
@@ -73,15 +83,11 @@ function Basket() {
             <Text fontSize="22">Total: {total} ₺</Text>
           </Box>
 
-          <Button mt="2" onClick={onOpen}>
+          <Button colorScheme="orange" mt="2" onClick={onOpen}>
             Order
           </Button>
 
-          <Modal
-            initialFocusRef={initialRef}
-            isOpen={isOpen}
-            onClose={onClose}
-          >
+          <Modal initialFocusRef={initialRef} isOpen={isOpen} onClose={onClose}>
             <ModalOverlay />
             <ModalContent>
               <ModalHeader>Order</ModalHeader>

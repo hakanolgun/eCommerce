@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import { Button, Flex, Box, Text, Heading } from "@chakra-ui/react";
 
@@ -40,6 +41,9 @@ function Profile({ history }) {
           Logout
         </Button>
       </Box>
+      <Link to="/">
+        <Button colorScheme="orange">Start Shopping</Button>
+      </Link>
     </Flex>
   );
 }

@@ -30,3 +30,17 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.buttonContainer{
+  display: flex;
+  justify-content: space-around;
+  gap: 0.5rem;
+}
+.box button{
+  font-size: 0.9rem;
+}
+.pricebox{
+  font-size: 1.1rem;
+  font-weight: bolder;
+  color: rgb(77, 77, 77);
+}

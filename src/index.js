@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import 'antd/dist/antd.css';
+import "antd/dist/antd.css";
 import App from "./App";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
@@ -9,6 +9,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import reportWebVitals from "./reportWebVitals";
 import { AuthProvider } from "./contexts/AuthContext";
 import { BasketProvider } from "./contexts/BasketContext";
+import { FavorProvider } from "./contexts/FavorContext";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -24,7 +25,9 @@ ReactDOM.render(
       <ChakraProvider>
         <AuthProvider>
           <BasketProvider>
-            <App />
+            <FavorProvider>
+              <App />
+            </FavorProvider>
           </BasketProvider>
         </AuthProvider>
       </ChakraProvider>
