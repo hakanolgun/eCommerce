@@ -23,12 +23,8 @@ function ProductDetail() {
     return <div>Error.</div>;
   }
 
-  console.log(product_id);
-  console.log("productDetails data", data);
-
-
   const myProduct = data.filter((item) => item.id == product_id)[0];
-  console.log(myProduct);
+
 
   // const myProductArray = data.filter(function (item) {
   //   return Number(item.id) === Number(product_id);

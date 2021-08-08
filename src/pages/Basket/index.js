@@ -24,7 +24,7 @@ function Basket() {
 	const initialRef = useRef();
 
 	const { items, removeFromBasket, emptyBasket } = useBasket();
-	const total = items.reduce((acc, obj) => acc + obj.price, 0);
+	const total = items.reduce((acc, obj) => acc + obj.price, 0).toFixed(2);
 
 	const handleSubmitForm = async () => {
 		const itemIds = items.map((item) => item._id);

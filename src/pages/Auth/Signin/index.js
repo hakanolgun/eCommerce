@@ -15,7 +15,7 @@ import { useAuth } from "../../../contexts/AuthContext";
 import { fetchLogin } from "../../../api";
 
 function Signin({ history }) {
-  const { login } = useAuth();
+  const { login, setUser } = useAuth();
 
   const formik = useFormik({
     initialValues: {

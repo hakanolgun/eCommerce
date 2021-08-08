@@ -61,14 +61,15 @@ export const fetchLogin = async (input) => {
 
 export const fetchMe = async () => {
   const { data } = await axios.get(
-    `${process.env.REACT_APP_BASE_ENDPOINT}/auth/me`
-  );
+    `https://610eb0c37f793c0017419593.mockapi.io/users`
+  )
+  // .filter((item)=> item.email === );
   return data;
 };
 
 export const fetchLogout = async () => {
   const { data } = await axios.post(
-    `${process.env.REACT_APP_BASE_ENDPOINT}/auth/logout`,
+    `https://610eb0c37f793c0017419593.mockapi.io/users`,
     {
       refresh_token: localStorage.getItem("refresh-token"),
     }

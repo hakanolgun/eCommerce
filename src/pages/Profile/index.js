@@ -1,26 +1,47 @@
-import React from 'react'
+import React from "react";
 import { useAuth } from "../../contexts/AuthContext";
-import { Button } from "@chakra-ui/react";
+import { Button, Flex, Box, Text, Heading } from "@chakra-ui/react";
 
+function Profile({ history }) {
+  const { user, logout } = useAuth();
 
-function Profile({history}) {
+  const handleLogout = async () => {
+    logout(() => {
+      //anasayfaya yönlendirme parametresi
+      history.push("/");
+    });
+  };
 
-    const { user, logout } = useAuth();
+  console.log("profile page user info", user);
 
-    const handleLogout = async () => {
-        logout(()=>{
-            //anasayfaya yönlendirme parametresi
-            history.push('/');
-        });
-    };
-
-    return (
-        <div>
-            <code>{JSON.stringify(user)}</code>
-
-            <Button colorScheme="pink" variant="solid" onClick={handleLogout}>Logout</Button>   
-        </div>
-    )
+  return (
+    <Flex
+      flexDirection="column"
+      mt="3rem"
+      align="center"
+      width="full"
+      gridGap="1rem"
+      justifyContent="center"
+    >
+      <Box textAlign="center">
+        <Heading>My Profile</Heading>
+      </Box>
+      <Box
+        border="1px solid black"
+        borderRadius="2rem"
+        padding="2rem"
+        display="flex"
+        flexDirection="column"
+        gridGap="1rem"
+      >
+        <Text fontSize="1.1rem">My E-mail: {user.email}</Text>
+        <Text fontSize="1.1rem">My Password: {user.password}</Text>
+        <Button colorScheme="pink" variant="solid" onClick={handleLogout}>
+          Logout
+        </Button>
+      </Box>
+    </Flex>
+  );
 }
 
-export default Profile
+export default Profile;
