@@ -1,13 +1,11 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 import { useFavor } from "../../contexts/FavorContext";
 import { Alert, Image, Button, Box, Heading } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 
 function Favor() {
-  const initialRef = useRef();
-
-  const { favors, removeFromFavor, emptyFavor } = useFavor();
+  const { favors, removeFromFavor, myHearthSvg } = useFavor();
 
   return (
     <Box p="10" className="favorpagecontainer">
@@ -28,13 +26,13 @@ function Favor() {
                   <p>{item.price} ₺</p>
                 </Link>
                 <Button
-                  className={styles.basketremovebtn}
+                  className={styles.favorremovebtn}
                   mt="2"
                   size="sm"
                   colorScheme="pink"
                   onClick={() => removeFromFavor(item.id)}
                 >
-                  Remove
+                  {myHearthSvg}
                 </Button>
               </li>
             ))}

@@ -17,3 +17,14 @@
   align-items: center;
   gap: 0.5rem;
 }
+.favorremovebtn{
+  background: none;
+}
+.favorremovebtn:hover{
+  background: none;
+}
+.favorremovebtn svg{
+  width: 3rem;
+  height: 3rem;
+  fill: rgb(97, 97, 97);
+}

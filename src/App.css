@@ -1,4 +1,16 @@
-.basketpagecontainer, .favorpagecontainer{
+.basketpagecontainer,
+.favorpagecontainer {
   max-width: 900px;
   margin: 0 auto;
+}
+
+@media screen and (min-width: 900px) {
+  .productsPageContainer {
+    padding: 3rem calc(3rem + 10vw);
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 899px) {
+  .productsPageContainer {
+    padding: 3rem 2rem;
+  }
 }

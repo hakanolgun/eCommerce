@@ -1,12 +1,16 @@
 import { useState, createContext, useContext, useEffect } from "react";
 import { fetchMe, fetchLogout } from "../api";
 import { Flex, Spinner } from "@chakra-ui/react";
+
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loggedIn, setLoggedIn] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [mySearched, setMySearched] = useState([]);
+  const [myInputBool, setMyInputBool] = useState(false);
+
 
   useEffect(() => {
     (async () => {
@@ -25,7 +29,7 @@ const AuthProvider = ({ children }) => {
   const login = (data) => {
     setLoggedIn(true);
     setUser(data);
-    
+
     localStorage.setItem("access-token", data.accessToken);
     localStorage.setItem("refresh-token", data.refreshToken);
   };
@@ -43,12 +47,15 @@ const AuthProvider = ({ children }) => {
     callback();
   };
 
-
   const values = {
     loggedIn,
     user,
     login,
-    logout
+    logout,
+    mySearched,
+    setMySearched,
+    myInputBool,
+    setMyInputBool
   };
 
   if (loading) {
