@@ -19,12 +19,19 @@
 }
 .favorremovebtn{
   background: none;
+  margin-right: 1rem;
+
 }
 .favorremovebtn:hover{
   background: none;
 }
 .favorremovebtn svg{
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  fill: rgb(255, 0, 0);
+}
+.favorremovebtn svg:hover{
+  width: 2.5rem;
+  height: 2.5rem;
   fill: rgb(97, 97, 97);
 }

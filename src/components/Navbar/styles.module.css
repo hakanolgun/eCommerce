@@ -66,7 +66,6 @@ sup{
 }
 .SearchFormSubmit{
   background: none;
-  cursor: pointer;
   max-width: 1rem;
   max-height: 1rem;
   border-radius: 50%;
@@ -74,7 +73,12 @@ sup{
 .SearchFormSubmit:hover{
   background: none;
 }
-
+.searchInput{
+  border-color:  blueviolet;
+}
+.searchInput:focus{
+  border-color:  blueviolet;
+}
 
 @media screen and (max-width: 940px) {
   .nav .left .menu{

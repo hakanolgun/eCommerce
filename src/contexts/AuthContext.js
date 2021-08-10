@@ -16,8 +16,8 @@ const AuthProvider = ({ children }) => {
     (async () => {
       try {
         const me = await fetchMe();
-        setLoggedIn(true);
-        setUser(me);
+        // setLoggedIn(true);
+        // setUser(me);
         setLoading(false);
       } catch (e) {
         console.log("useeffect", e);

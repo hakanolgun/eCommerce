@@ -16,8 +16,7 @@ import { useQuery } from "react-query";
 import { fetchProductList } from "../../api";
 
 function Navbar() {
-  const { loggedIn, user, setMySearched, mySearched, setMyInputBool } =
-    useAuth();
+  const { loggedIn, user, setMySearched, setMyInputBool } = useAuth();
   const { items } = useBasket();
   const { favors, myHearthSvg, myCartSvg, myProfileSvg } = useFavor();
 
@@ -31,13 +30,10 @@ function Navbar() {
     if (mySearchWord && mySearchWord !== "") {
       setMyInputBool(true);
       const mySearchResults = data.filter((item) =>
-        item.title.toLowerCase().split(" ").includes(mySearchWord)
+        item.title.toLowerCase().includes(mySearchWord)
       );
-      console.log(mySearchResults);
       setMySearched(mySearchResults);
-      console.log("mySearched is: ", mySearched);
-      console.log(mySearched.length);
-    }else{
+    } else {
       setMyInputBool(false);
     }
   };
@@ -61,16 +57,15 @@ function Navbar() {
         <form action="">
           <FormControl id="search">
             <InputGroup>
-              <Input
+              <Input 
+              className={styles.searchInput}
                 type="search"
                 placeholder="Search..."
                 onChange={handleSearchSubmit}
               />
               <InputRightElement
                 children={
-                  <Button className={styles.SearchFormSubmit} type="submit">
-                    &#128269;
-                  </Button>
+                  <span className={styles.SearchFormSubmit}>&#128269;</span>
                 }
               />
             </InputGroup>{" "}

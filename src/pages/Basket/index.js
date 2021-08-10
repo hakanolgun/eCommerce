@@ -35,7 +35,7 @@ function Basket() {
   const total = items.reduce((acc, obj) => acc + obj.price, 0).toFixed(2);
 
   const handleSubmitForm = async () => {
-    const itemIds = items.map((item) => item._id);
+    const itemIds = items.map((item) => item.id);
 
     const input = {
       address,

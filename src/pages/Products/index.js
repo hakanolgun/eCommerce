@@ -20,9 +20,6 @@ function Products() {
         templateColumns="repeat(auto-fill, minmax(300px, 1fr))"
         gap={8}
       >
-        {/* {mySearched.map((item, key) => (
-          <Card key={key} item={item} />
-        ))} */}
         {myInputBool
           ? mySearched.map((item, key) => <Card key={key} item={item} />)
           : data.map((item, key) => <Card key={key} item={item} />)}

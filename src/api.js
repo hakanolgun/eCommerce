@@ -4,7 +4,7 @@ axios.interceptors.request.use(
   function (config) {
     const { origin } = new URL(config.url);
 
-    const allowedOrigins = [process.env.REACT_APP_BASE_ENDPOINT];
+    const allowedOrigins = [`https://610eb0c37f793c0017419593.mockapi.io`];
     const token = localStorage.getItem("access-token");
 
     if (allowedOrigins.includes(origin)) {
@@ -79,7 +79,7 @@ export const fetchLogout = async () => {
 
 export const postOrder = async (input) => {
   const { data } = await axios.post(
-    `${process.env.REACT_APP_BASE_ENDPOINT}/order`,
+    `https://610eb0c37f793c0017419593.mockapi.io/order`,
     input
   );
 

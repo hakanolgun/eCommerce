@@ -44,3 +44,8 @@
   font-weight: bolder;
   color: rgb(77, 77, 77);
 }
+button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

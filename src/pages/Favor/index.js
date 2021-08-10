@@ -25,15 +25,12 @@ function Favor() {
                   <p>{item.title}</p>
                   <p>{item.price} ₺</p>
                 </Link>
-                <Button
+                <button
                   className={styles.favorremovebtn}
-                  mt="2"
-                  size="sm"
-                  colorScheme="pink"
                   onClick={() => removeFromFavor(item.id)}
                 >
                   {myHearthSvg}
-                </Button>
+                </button>
               </li>
             ))}
           </ul>
