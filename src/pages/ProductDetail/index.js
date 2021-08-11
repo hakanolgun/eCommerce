@@ -7,11 +7,13 @@ import ImageGallery from "react-image-gallery";
 import styles from "./styles.module.css";
 import { useBasket } from "../../contexts/BasketContext";
 import { useFavor } from "../../contexts/FavorContext";
+import { useAuth } from "../../contexts/AuthContext";
 
 function ProductDetail() {
   const { product_id } = useParams();
   const { addToBasket, items } = useBasket();
   const { addToFavor, favors } = useFavor();
+  const { loggedIn, goToLink } = useAuth();
 
   const { isLoading, isError, data } = useQuery(["product", product_id], () =>
     fetchProduct(product_id)
@@ -92,7 +94,9 @@ function ProductDetail() {
       <Button
         colorScheme={findFavorItem ? "purple" : "red"}
         ml="6"
-        onClick={() => addToFavor(myProduct, findFavorItem)}
+        onClick={
+          loggedIn ? () => addToFavor(myProduct, findFavorItem) : goToLink
+        }
       >
         {findFavorItem ? "Remove" : myHearthSvg}
       </Button>
@@ -100,7 +104,9 @@ function ProductDetail() {
       <Button
         colorScheme={findBasketItem ? "purple" : "orange"}
         ml="6"
-        onClick={() => addToBasket(myProduct, findBasketItem)}
+        onClick={
+          loggedIn ? () => addToBasket(myProduct, findBasketItem) : goToLink
+        }
       >
         {findBasketItem ? "Remove" : myCartSvg}
       </Button>

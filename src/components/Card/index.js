@@ -93,7 +93,7 @@ function Card({ item }) {
             loggedIn ? () => addToBasket(item, findBasketItem) : goToLink
           }
         >
-          {findBasketItem ? myCartSvg : "Add to Basket"}
+          {findBasketItem ? myCartSvg : "Add to Cart"}
         </Button>
       </Box>
     </Box>

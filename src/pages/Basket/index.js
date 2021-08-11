@@ -52,7 +52,7 @@ function Basket() {
   return (
     <Box className="basketpagecontainer" p="10">
       <Box mb="1rem" textAlign="center">
-        <Heading>Basket</Heading>
+        <Heading>Shopping Cart</Heading>
       </Box>
       {items.length < 1 && (
         <Alert status="warning">You have not any items in your basket</Alert>
@@ -64,9 +64,9 @@ function Basket() {
               <li key={item.id} className={styles.basketli}>
                 <Link to={`/product/${item.id}`} className={styles.basketlink}>
                   <Image htmlWidth={100} src={item.image} alt="basket item" />
-                  <p>{item.title}</p>
-                  <p>{item.price} ₺</p>
                 </Link>
+                <Text className={styles.titletext}>{item.title}</Text>
+                <Text className={styles.pricetext}>{item.price} ₺</Text>
                 <Button
                   className={styles.basketremovebtn}
                   mt="2"
@@ -79,13 +79,16 @@ function Basket() {
               </li>
             ))}
           </ul>
-          <Box mt="10">
-            <Text fontSize="22">Total: {total} ₺</Text>
+          <Box maxWidth="700" mt="10">
+            <Text fontSize="22" align="right">
+              Total: {total} ₺
+            </Text>
           </Box>
-
-          <Button colorScheme="orange" mt="2" onClick={onOpen}>
-            Order
-          </Button>
+          <Box maxWidth="700" align="right">
+            <Button colorScheme="orange" mt="2" onClick={onOpen}>
+              Order
+            </Button>
+          </Box>
 
           <Modal initialFocusRef={initialRef} isOpen={isOpen} onClose={onClose}>
             <ModalOverlay />

@@ -8,7 +8,7 @@
   justify-content: space-between;
   margin-bottom: 2rem;
   gap: 1rem;
-  padding: 0.5rem;
+  padding: 0.7rem;
   border: 1px solid darkgray;
   border-radius: 10px;
   box-shadow: 10px 10px 28px -10px rgba(0, 0, 0, 0.75);
@@ -16,14 +16,25 @@
   -moz-box-shadow: 10px 10px 28px -10px rgba(0, 0, 0, 0.75);
 }
 
+.basketli img{
+  margin-right: 1rem;
+}
+
 .basketlink {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
-
+.titletext{
+  flex-grow: 1;
+}
+.pricetext{
+  flex-shrink: 0;
+}
 .basketremovebtn{
   flex-shrink: 0;
+  position: relative;
+  bottom: 5px;
 }
 
 
