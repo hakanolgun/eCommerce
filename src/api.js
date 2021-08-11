@@ -45,24 +45,23 @@ export const postProduct = async (input) => {
 
 export const fetchRegister = async (input) => {
   const { data } = await axios.post(
-    `https://610eb0c37f793c0017419593.mockapi.io/users`,
-    input
+    `https://610eb0c37f793c0017419593.mockapi.io/users`
   );
   return data;
 };
 
 export const fetchLogin = async (input) => {
-  const { data } = await axios.post(
-    `https://610eb0c37f793c0017419593.mockapi.io/users`,
-    input
+  const { data } = await axios.get(
+    `https://610eb0c37f793c0017419593.mockapi.io/users`
   );
+  console.log("fethclogindata:", data);
   return data;
 };
 
 export const fetchMe = async () => {
   const { data } = await axios.get(
     `https://610eb0c37f793c0017419593.mockapi.io/users`
-  )
+  );
   // .filter((item)=> item.email === );
   return data;
 };

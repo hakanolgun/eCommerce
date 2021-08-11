@@ -4,11 +4,20 @@ import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 import { useBasket } from "../../contexts/BasketContext";
 import { useFavor } from "../../contexts/FavorContext";
+import { useAuth } from "../../contexts/AuthContext";
 import styled from "styled-components";
+
+const Button = styled.button`
+  border-radius: 10px;
+  font-size: 0.9rem;
+  padding: 0.6rem 0.1rem;
+  width: 48%;
+`;
 
 function Card({ item }) {
   const { addToBasket, items } = useBasket();
   const { addToFavor, favors } = useFavor();
+  const { loggedIn } = useAuth();
 
   const findBasketItem = items.find(
     (basket_item) => basket_item.id === item.id
@@ -38,12 +47,12 @@ function Card({ item }) {
     </svg>
   );
 
-  const Button = styled.button`
-    border-radius: 10px;
-    font-size: 0.9rem;
-    padding: 0.6rem 0.1rem;
-    width: 48%;
-  `;
+  const goToRegister = () => {
+    let mylink = document.createElement("a");
+    mylink.setAttribute("href", "/signup");
+    console.log(mylink);
+    mylink.click();
+  };
 
   return (
     <Box
@@ -76,14 +85,22 @@ function Card({ item }) {
       <Box className={styles.buttonContainer}>
         <Button
           style={{ backgroundColor: findFavorItem ? "purple" : "red" }}
-          onClick={() => addToFavor(item, findFavorItem)}
+          onClick={
+            loggedIn ? () => addToFavor(item, findFavorItem) : goToRegister
+          }
         >
           {myHearthSvg}
         </Button>
         <Button
-          style={{ backgroundColor: findBasketItem ? "purple" : "orange", color: "white", fontSize: "0.9rem",
-         fontWeight: "bolder" }}
-          onClick={() => addToBasket(item, findBasketItem)}
+          style={{
+            backgroundColor: findBasketItem ? "purple" : "orange",
+            color: "white",
+            fontSize: "0.9rem",
+            fontWeight: "bolder",
+          }}
+          onClick={
+            loggedIn ? () => addToBasket(item, findBasketItem) : goToRegister
+          }
         >
           {findBasketItem ? myCartSvg : "Add to Basket"}
         </Button>

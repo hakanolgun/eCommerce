@@ -1,6 +1,6 @@
 import React from "react";
 import { useFavor } from "../../contexts/FavorContext";
-import { Alert, Image, Button, Box, Heading } from "@chakra-ui/react";
+import { Alert, Image, Box, Heading } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 

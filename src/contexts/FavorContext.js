@@ -67,7 +67,7 @@ const FavorProvider = ({ children }) => {
     emptyFavor,
     myHearthSvg,
     myProfileSvg,
-    myCartSvg
+    myCartSvg,
   };
 
   return (

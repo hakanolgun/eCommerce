@@ -29,7 +29,7 @@ function Signin({ history }) {
           email: values.email,
           password: values.password,
         });
-        console.log(loginResponse);
+        console.log("signinpageloginresponse",loginResponse);
         login(loginResponse);
         history.push("/profile");
       } catch (e) {
