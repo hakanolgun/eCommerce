@@ -27,10 +27,12 @@ function Signup({history}) {
     //values'da formdaki datalar, bag'de datalar ile yapabileceğimi işlemler var
     onSubmit: async (values, bag) => {
       try {
+        console.log("signupvalues", values);
         const registerResponse = await fetchRegister({
           email: values.email,
           password: values.password
         });
+        console.log("signup registerresponse", registerResponse);
         login(registerResponse);
         history.push('/profile');
 

@@ -13,7 +13,7 @@ function Profile({ history }) {
     });
   };
 
-  console.log("profile page user info", user);
+  // console.log("profile page user info", user);
 
   return (
     <Flex
