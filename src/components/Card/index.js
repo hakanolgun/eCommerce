@@ -17,7 +17,7 @@ const Button = styled.button`
 function Card({ item }) {
   const { addToBasket, items } = useBasket();
   const { addToFavor, favors } = useFavor();
-  const { loggedIn, goToRegister } = useAuth();
+  const { loggedIn, goToLink } = useAuth();
 
   const findBasketItem = items.find(
     (basket_item) => basket_item.id === item.id
@@ -46,8 +46,6 @@ function Card({ item }) {
       <path d="M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm3.5-1.5c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm6.304-15l-3.431 12h-2.102l2.542-9h-16.813l4.615 11h13.239l3.474-12h1.929l.743-2h-4.196z" />
     </svg>
   );
-
-
 
   return (
     <Box
@@ -80,9 +78,7 @@ function Card({ item }) {
       <Box className={styles.buttonContainer}>
         <Button
           style={{ backgroundColor: findFavorItem ? "purple" : "red" }}
-          onClick={
-            loggedIn ? () => addToFavor(item, findFavorItem) : goToRegister
-          }
+          onClick={loggedIn ? () => addToFavor(item, findFavorItem) : goToLink}
         >
           {myHearthSvg}
         </Button>
@@ -94,7 +90,7 @@ function Card({ item }) {
             fontWeight: "bolder",
           }}
           onClick={
-            loggedIn ? () => addToBasket(item, findBasketItem) : goToRegister
+            loggedIn ? () => addToBasket(item, findBasketItem) : goToLink
           }
         >
           {findBasketItem ? myCartSvg : "Add to Basket"}

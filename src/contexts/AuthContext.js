@@ -46,10 +46,9 @@ const AuthProvider = ({ children }) => {
     callback();
   };
 
-  const goToRegister = () => {
-    let mylink = document.createElement("a");
-    mylink.setAttribute("href", "/signup");
-    mylink.click();
+  const goToLink = () => {
+    const linkElement = document.getElementsByClassName("registerLink")[0];
+    linkElement.click();
   };
 
   const values = {
@@ -61,7 +60,7 @@ const AuthProvider = ({ children }) => {
     setMySearched,
     myInputBool,
     setMyInputBool,
-    goToRegister,
+    goToLink,
   };
 
   if (loading) {

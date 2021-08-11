@@ -80,7 +80,7 @@ function Navbar() {
                 Login
               </Button>
             </Link>
-            <Link to="/signup">
+            <Link className="registerLink" to="/signup">
               <Button className={styles.registerBtns} colorScheme="purple">
                 Register
               </Button>
