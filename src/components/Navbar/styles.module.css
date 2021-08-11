@@ -64,6 +64,7 @@ sup{
 .navbarFormContainer{
   flex-grow: 1;
 }
+
 .SearchFormSubmit{
   background: none;
   max-width: 1rem;

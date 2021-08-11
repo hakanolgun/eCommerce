@@ -15,7 +15,7 @@ import { useAuth } from "../../../contexts/AuthContext";
 import { fetchLogin } from "../../../api";
 
 function Signin({ history }) {
-  const { login } = useAuth();
+  const { login, goToRegister } = useAuth();
 
   const formik = useFormik({
     initialValues: {
@@ -29,9 +29,14 @@ function Signin({ history }) {
           email: values.email,
           password: values.password,
         });
-        console.log("signinpageloginresponse",loginResponse);
-        login(loginResponse);
-        history.push("/profile");
+        console.log("signinpageloginresponse", loginResponse);
+
+        if (loginResponse === false) {
+          goToRegister();
+        } else {
+          login(loginResponse[0]);
+          history.push("/profile");
+        }
       } catch (e) {
         console.log("error oluştu", e);
         bag.setErrors({ general: e.response.data.message });

@@ -17,7 +17,7 @@ const Button = styled.button`
 function Card({ item }) {
   const { addToBasket, items } = useBasket();
   const { addToFavor, favors } = useFavor();
-  const { loggedIn } = useAuth();
+  const { loggedIn, goToRegister } = useAuth();
 
   const findBasketItem = items.find(
     (basket_item) => basket_item.id === item.id
@@ -47,12 +47,7 @@ function Card({ item }) {
     </svg>
   );
 
-  const goToRegister = () => {
-    let mylink = document.createElement("a");
-    mylink.setAttribute("href", "/signup");
-    console.log(mylink);
-    mylink.click();
-  };
+
 
   return (
     <Box

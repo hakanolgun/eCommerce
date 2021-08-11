@@ -30,8 +30,8 @@ const AuthProvider = ({ children }) => {
     setLoggedIn(true);
     setUser(data);
 
-    localStorage.setItem("access-token", data.accessToken);
-    localStorage.setItem("refresh-token", data.refreshToken);
+    // localStorage.setItem("access-token", data.accessToken);
+    // localStorage.setItem("refresh-token", data.refreshToken);
   };
 
   //callback'i çıkış yaptıktan sonra anasayfaya yönlendirme yapmak için ekledik.
@@ -47,6 +47,15 @@ const AuthProvider = ({ children }) => {
     callback();
   };
 
+  const goToRegister = () => {
+    let mylink = document.createElement("a");
+    mylink.setAttribute("href", "/signup");
+    console.log(mylink);
+    mylink.click();
+  };
+
+
+
   const values = {
     loggedIn,
     user,
@@ -55,7 +64,8 @@ const AuthProvider = ({ children }) => {
     mySearched,
     setMySearched,
     myInputBool,
-    setMyInputBool
+    setMyInputBool,
+    goToRegister
   };
 
   if (loading) {
