@@ -74,7 +74,7 @@ function Basket() {
                   colorScheme="pink"
                   onClick={() => removeFromBasket(item.id)}
                 >
-                  Remove
+                  X
                 </Button>
               </li>
             ))}
