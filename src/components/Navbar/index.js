@@ -46,7 +46,7 @@ function Navbar() {
         </div>
         <ul className={styles.menu}>
           <li>
-            <Link to="/">Products</Link>
+            <Link to="/">Store</Link>
           </li>
           <li>
             <Link to="/contact">Contact</Link>
