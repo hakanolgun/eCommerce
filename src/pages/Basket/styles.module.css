@@ -3,6 +3,7 @@
 }
 
 .basketli {
+  min-height: 8rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
