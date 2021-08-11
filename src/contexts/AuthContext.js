@@ -15,9 +15,17 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     (async () => {
       try {
+        const logindata = JSON.parse(localStorage.getItem("logindata"));
+        console.log("logindata", logindata); 
         const me = await fetchMe();
-        // setLoggedIn(true);
-        // setUser(me);
+        const newme = me.filter(item => item.email == logindata.email);
+        console.log("newme", newme);
+
+        if(logindata){
+          setLoggedIn(true);
+          setUser(newme[0]);
+        }
+        
         setLoading(false);
       } catch (e) {
         console.log("useeffect", e);
@@ -29,21 +37,15 @@ const AuthProvider = ({ children }) => {
   const login = (data) => {
     setLoggedIn(true);
     setUser(data);
-
-    // localStorage.setItem("access-token", data.accessToken);
-    // localStorage.setItem("refresh-token", data.refreshToken);
+    localStorage.setItem("logindata", JSON.stringify(data));
   };
 
   //callback'i çıkış yaptıktan sonra anasayfaya yönlendirme yapmak için ekledik.
   const logout = async (callback) => {
     setLoggedIn(false);
     setUser(null);
-
+    localStorage.removeItem("logindata");
     await fetchLogout();
-
-    localStorage.removeItem("access-token");
-    localStorage.removeItem("refresh-token");
-
     callback();
   };
 

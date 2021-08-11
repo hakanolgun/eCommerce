@@ -54,10 +54,7 @@ export const fetchLogin = async (input) => {
   const { data } = await axios.get(
     `https://610eb0c37f793c0017419593.mockapi.io/users`
   );
-  console.log("input", input.email);
-  console.log("fethclogindata:", data);
   let newdata = data.filter((item) => item.email === input.email);
-  console.log("newdata", newdata);
   if (newdata.length !== 1) {
     newdata = false;
   }
@@ -68,7 +65,6 @@ export const fetchMe = async () => {
   const { data } = await axios.get(
     `https://610eb0c37f793c0017419593.mockapi.io/users`
   );
-  // .filter((item)=> item.email === );
   return data;
 };
 
