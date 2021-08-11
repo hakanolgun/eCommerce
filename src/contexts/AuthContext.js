@@ -11,21 +11,18 @@ const AuthProvider = ({ children }) => {
   const [mySearched, setMySearched] = useState([]);
   const [myInputBool, setMyInputBool] = useState(false);
 
-
   useEffect(() => {
     (async () => {
       try {
         const logindata = JSON.parse(localStorage.getItem("logindata"));
-        console.log("logindata", logindata); 
         const me = await fetchMe();
-        const newme = me.filter(item => item.email == logindata.email);
-        console.log("newme", newme);
 
-        if(logindata){
+        if (logindata !== null) {
+          const newme = me.filter((item) => item.email == logindata.email);
           setLoggedIn(true);
           setUser(newme[0]);
         }
-        
+
         setLoading(false);
       } catch (e) {
         console.log("useeffect", e);
@@ -52,11 +49,8 @@ const AuthProvider = ({ children }) => {
   const goToRegister = () => {
     let mylink = document.createElement("a");
     mylink.setAttribute("href", "/signup");
-    console.log(mylink);
     mylink.click();
   };
-
-
 
   const values = {
     loggedIn,
@@ -67,7 +61,7 @@ const AuthProvider = ({ children }) => {
     setMySearched,
     myInputBool,
     setMyInputBool,
-    goToRegister
+    goToRegister,
   };
 
   if (loading) {
