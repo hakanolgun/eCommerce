@@ -23,6 +23,7 @@ import {
   useDisclosure,
   FormControl,
   FormLabel,
+  useToast,
 } from "@chakra-ui/react";
 import { postOrder } from "../../api";
 
@@ -30,12 +31,12 @@ function Basket() {
   const [address, setAddress] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const initialRef = useRef();
-
   const { items, removeFromBasket, emptyBasket } = useBasket();
   const total = items.reduce((acc, obj) => acc + obj.price, 0).toFixed(2);
+  const toast = useToast();
 
   const handleSubmitForm = async () => {
-    const itemIds = items.map((item) => item.id);
+    const itemIds = items.map((item) => item.title);
 
     const input = {
       address,
@@ -47,6 +48,12 @@ function Basket() {
 
     emptyBasket();
     onClose();
+    toast({
+      title: `Tebrikler! Siparişiniz Alındı.`,
+      position: "top",
+      status: "success",
+      isClosable: true,
+    });
   };
 
   return (
