@@ -15,7 +15,7 @@ import { useAuth } from "../../../contexts/AuthContext";
 import { fetchLogin } from "../../../api";
 
 function Signin({ history }) {
-  const { login, goToRegister } = useAuth();
+  const { login, goToLink } = useAuth();
 
   const formik = useFormik({
     initialValues: {
@@ -32,7 +32,7 @@ function Signin({ history }) {
         console.log("signinpageloginresponse", loginResponse);
 
         if (loginResponse === false) {
-          goToRegister();
+          goToLink();
         } else {
           login(loginResponse[0]);
           history.push("/profile");

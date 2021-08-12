@@ -64,7 +64,7 @@ function Products() {
 				),
 			},
 		];
-	}, []);
+	}, [deleteMutation]);
 
 	if (isLoading) {
 		return <div>Loading...</div>;

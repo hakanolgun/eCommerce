@@ -18,7 +18,7 @@ const AuthProvider = ({ children }) => {
         const me = await fetchMe();
 
         if (logindata !== null) {
-          const newme = me.filter((item) => item.email == logindata.email);
+          const newme = me.filter((item) => item.email === logindata.email);
           setLoggedIn(true);
           setUser(newme[0]);
         }
