@@ -11,6 +11,7 @@ See live: [https://ecommerce-hakan.netlify.app/](https://ecommerce-hakan.netlify
 * Add to Cart
 * Add to Favorites
 * Order
+* Product Search
 * Responsive Design
 
 ## Tools
