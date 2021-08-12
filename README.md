@@ -2,7 +2,7 @@
 
 See live: [https://ecommerce-hakan.netlify.app/](https://ecommerce-hakan.netlify.app/)
 
-<img src="./src/Screenshot 2021-07-25 at 15-13-29 React App.png" width="100%" align="center">
+<img src="./src/ecommercepage.png" width="100%" align="center">
 
 
 
