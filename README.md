@@ -1,4 +1,4 @@
-# eCommerce Clothes Store - ReactJS
+# eCommerce Clothes Store - ReactJS & Mockapi.io
 
 See live: [https://ecommerce-hakan.netlify.app/](https://ecommerce-hakan.netlify.app/)
 
