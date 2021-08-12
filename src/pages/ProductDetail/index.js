@@ -27,7 +27,7 @@ function ProductDetail() {
     return <div>Error.</div>;
   }
 
-  const myProduct = data.filter((item) => item.id == product_id)[0];
+  const myProduct = data.filter((item) => Number(item.id) === Number(product_id))[0];
   const myHearthSvg = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
