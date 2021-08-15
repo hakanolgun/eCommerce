@@ -2,7 +2,7 @@
 
 See live: [https://ecommerce-hakan.netlify.app/](https://ecommerce-hakan.netlify.app/)
 
-<img src="./src/ecommercepage.png" width="100%" align="center">
+<img src="./photo.png" width="100%" align="center">
 
 
 ## Features
