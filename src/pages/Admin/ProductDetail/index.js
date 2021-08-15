@@ -1,5 +1,4 @@
 import React from "react";
-
 import { useParams } from "react-router-dom";
 import { fetchProduct, updateProduct } from "../../../api";
 import { useQuery } from "react-query";
@@ -32,13 +31,15 @@ function ProductDetail() {
     return <div>Error {error.message}</div>;
   }
 
-  const myProduct = data.filter((item) => item._id === product_id)[0];
-  console.log("myproduct", myProduct);
+
+
+  const myProduct = data.filter((item) => Number(item.id) === Number(product_id))[0];
+ 
 
   const handleSubmit = async (values, bag) => {
     console.log("submitted");
     message.loading({ content: "Loading...", key: "product_update" });
-
+    console.log(values);
     try {
       await updateProduct(values, product_id);
 
@@ -48,11 +49,12 @@ function ProductDetail() {
         duration: 2,
       });
     } catch (e) {
+      console.log(e);
       message.error("The product does not updated.");
     }
   };
 
-  console.log("admindata", data);
+  // console.log("admindata", data);
   return (
     <div>
       <Text fontSize="2xl">Edit</Text>

@@ -38,7 +38,10 @@ function Basket() {
   const handleSubmitForm = async () => {
     const itemIds = items.map((item) => item.title);
 
+    const useremail = JSON.parse(localStorage.getItem("logindata")).email;
+
     const input = {
+      useremail,
       address,
       items: JSON.stringify(itemIds),
     };

@@ -37,6 +37,7 @@ function Orders() {
 				<TableCaption>Imperial to metric conversion factors</TableCaption>
 				<Thead>
 					<Tr>
+						<Th>Date</Th>
 						<Th>User</Th>
 						<Th>Address</Th>
 						<Th isNumeric>Items</Th>
@@ -44,10 +45,11 @@ function Orders() {
 				</Thead>
 				<Tbody>
 					{data.map((item) => (
-						<Tr key={item._id}>
-							<Td>{item.user.email}</Td>
-							<Td>{item.adress}</Td>
-							<Td isNumeric>{item.items.length}</Td>
+						<Tr key={item.id}>
+							<Td>{item.createdAt}</Td>
+							<Td>{item.useremail}</Td>
+							<Td>{item.address}</Td>
+							<Td isNumeric>{item.items}</Td>
 						</Tr>
 					))}
 				</Tbody>

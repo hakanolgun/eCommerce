@@ -106,7 +106,7 @@ function Navbar() {
             )}
             {user?.role === "admin" && (
               <Link to="/admin">
-                <Button colorScheme="red" variant="ghost">
+                <Button colorScheme="purple" variant="outline" fontSize="small">
                   Admin
                 </Button>
               </Link>

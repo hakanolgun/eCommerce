@@ -36,7 +36,7 @@ export const fetchProduct = async (id) => {
 
 export const postProduct = async (input) => {
   const { data } = await axios.post(
-    `${process.env.REACT_APP_BASE_ENDPOINT}/product/`,
+    `https://610eb0c37f793c0017419593.mockapi.io/products`,
     input
   );
 
@@ -89,7 +89,7 @@ export const postOrder = async (input) => {
 
 export const fetchOrders = async () => {
   const { data } = await axios.get(
-    `${process.env.REACT_APP_BASE_ENDPOINT}/order`
+    `https://610eb0c37f793c0017419593.mockapi.io/order`
   );
 
   return data;
@@ -97,7 +97,7 @@ export const fetchOrders = async () => {
 
 export const deleteProduct = async (product_id) => {
   const { data } = await axios.delete(
-    `${process.env.REACT_APP_BASE_ENDPOINT}/product/${product_id}`
+    `https://610eb0c37f793c0017419593.mockapi.io/products/:${product_id}`
   );
 
   return data;
@@ -105,9 +105,8 @@ export const deleteProduct = async (product_id) => {
 
 export const updateProduct = async (input, product_id) => {
   const { data } = await axios.put(
-    `${process.env.REACT_APP_BASE_ENDPOINT}/product/${product_id}`,
+    `https://610eb0c37f793c0017419593.mockapi.io/products/${product_id}`,
     input
   );
-
   return data;
 };

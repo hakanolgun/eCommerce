@@ -6,10 +6,17 @@
 }
 .box {
   display: flex;
+  background-color: rgb(230, 219, 240);
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid gray;
-  padding: 0.5rem 1rem !important;
+  padding: 0.8rem 1rem !important;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.box:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 .link {
   display: flex;
@@ -31,20 +38,23 @@
   justify-content: space-between;
 }
 
-.buttonContainer{
+.buttonContainer {
   display: flex;
   justify-content: space-around;
   gap: 0.5rem;
 }
-.box button{
+.buttonContainer button:hover {
+  transform: translateY(2px);
+}
+.box button {
   font-size: 0.9rem;
 }
-.pricebox{
+.pricebox {
   font-size: 1.1rem;
   font-weight: bolder;
   color: rgb(77, 77, 77);
 }
-button{
+button {
   display: flex;
   justify-content: center;
   align-items: center;

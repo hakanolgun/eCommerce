@@ -41,7 +41,7 @@ function Products() {
 				key: "action",
 				render: (text, record) => (
 					<>
-						<Link to={`/admin/products/${record._id}`}>Edit</Link>
+						<Link to={`/admin/products/${record.id}`}>Edit</Link>
 						<Popconfirm
 							title="Are you sure?"
 							onConfirm={() => {
