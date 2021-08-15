@@ -1,5 +1,5 @@
 .nav {
-  padding: 1.5rem;
+  padding: 2.5rem 1.5rem;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid whitesmoke;
@@ -8,6 +8,8 @@
   background-color: #f5f5f5;
   gap: 1rem;
   flex-wrap: nowrap;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
 .nav .left {
@@ -43,43 +45,41 @@
   padding: 1rem;
   border-radius: 50%;
 }
-.nav .right{
+.nav .right {
   flex-wrap: nowrap;
 }
-
 
 .nav button {
   margin-right: 0.5rem;
   font-size: 1.2rem;
 }
-.registerBtns:first-child{
+.registerBtns:first-child {
   font-size: 1rem;
   margin-bottom: 0.1rem;
 }
 
-sup{
-    color: orangered;
+sup {
+  color: orangered;
 }
 
-.navbarFormContainer{
+.navbarFormContainer {
   flex-grow: 1;
 }
 
-.SearchFormSubmit{
+.SearchFormSubmit {
   background: none;
   max-width: 1rem;
   max-height: 1rem;
   border-radius: 50%;
 }
 
-
 @media screen and (max-width: 940px) {
-  .nav .left .menu{
+  .nav .left .menu {
     display: none;
   }
 }
-@media  screen and (max-width: 750px) {
-  .nav{
+@media screen and (max-width: 750px) {
+  .nav {
     padding: 1rem;
   }
   .logo {
@@ -93,7 +93,7 @@ sup{
   }
 }
 @media screen and (max-width: 749px) {
-  .nav{
+  .nav {
     flex-direction: column;
   }
 }
