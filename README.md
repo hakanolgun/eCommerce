@@ -23,8 +23,8 @@ See live: [https://ecommerce-hakan.netlify.app/](https://ecommerce-hakan.netlify
 * Formik
 
 
-## How To Run
+## Usage
 
 In the project directory, you can run:
 
-### `yarn start`
+`yarn start`
