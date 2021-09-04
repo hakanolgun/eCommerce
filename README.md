@@ -1,5 +1,7 @@
 # eCommerce Clothes Store - ReactJS & Mockapi.io
 
+I've developed an ecommerce website with ReactJS.
+
 See live: [https://ecommerce-hakan.netlify.app/](https://ecommerce-hakan.netlify.app/)
 
 <img src="./photo.png" width="100%" align="center">
